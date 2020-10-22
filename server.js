@@ -9,7 +9,7 @@ const loginRoute = require('./routes/loginRoute')
 const getAccounts = require('./routes/accounts/getAccounts')
 const addAccounts = require('./routes/accounts/addAccounts')
 const getTransactions = require('./routes/transactions/getTransactions')
-const addTransactions = require('./routes/transactions/getTransactions')
+const addTransactions = require('./routes/transactions/addTransaction')
 
 const app = express()
 app.use(bodyParser.json())
