@@ -1,11 +1,12 @@
 module.exports = [
     'id',
-    'userId',
-    'bookId',
     'transactionCode',
-    'amount',
+    'name',
+    'price',
     'qty',
     'total',
-    'inDate',
-    'status'
+    'discount',
+    'totalEnd',
+    'totalAll',
+    'time'
 ]

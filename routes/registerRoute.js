@@ -5,7 +5,6 @@ const db = require('../controller/dbController')
 app.post('/register', (req, res) => {
 
   const result = db.add('users', req.body)
-  console.log(result)
   if (!result) {
     res.status(400).send('Wrong body')
   } else {
