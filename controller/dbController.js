@@ -3,7 +3,7 @@ const FileSync = require('lowdb/adapters/FileSync')
 const booksModel = require('../model/booksModel')
 const transactionsModel = require('../model/transactionsModel')
 const usersModel = require('../model/usersModel')
-const usersTransactionsModel = require('../model/usersTransactionsModel')
+const accountsModel = require('../model/accountsModel')
 
 // ⚠️ propietary code, don't change it ⚠️
 // this code will create db.json automatically if your folder doesn't have one
@@ -24,7 +24,7 @@ let db;
     db.defaults({
       users: [],
       transactions: [],
-      usersTransactions: [],
+      accounts: [],
       books: []
     })
       .write()
@@ -84,8 +84,8 @@ function add(tableName, body) {
   if (tableName == 'users') {
     shapedBody = shapeObject(body, usersModel)
   }
-  if (tableName == 'usersTransactions') {
-    shapedBody = shapeObject(body, usersTransactionsModel)
+  if (tableName == 'accounts') {
+    shapedBody = shapeObject(body, accountsModel)
   }
 
   if (!shapedBody) {

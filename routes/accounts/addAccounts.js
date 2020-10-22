@@ -4,10 +4,15 @@ const db = require('../../controller/dbController')
 const authorization = require('../../middleware/authorizationMiddleware')
 
 app.use(authorization)
-app.get('/usertransactions', (req, res) => {
-
-    const result = db.get('usertransactions', req.query)
-    res.send(result)
+app.post('/accounts', (req, res) => {
+    const body = req.body
+    const result = db.add('accounts', body)
+    if (!result) {
+        res.status(400).send('Wrong body')
+    } else {
+        res.send(result)
+    }
+    return
 })
 
 
